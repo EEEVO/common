@@ -12,7 +12,7 @@
   - [js实现解析URL参数， 返回一个对象](#js实现解析url参数-返回一个对象)
   - [加入收藏](#加入收藏)
   - [实现设为首页](#实现设为首页)
-  - [JS 生成范围随机整数（ 应拓展第三个参数灵活生成整数或者小数）](#js-生成范围随机整数-应拓展第三个参数灵活生成整数或者小数)
+  - [JS 生成范围随机整数](#js-生成范围随机整数)
   - [原生JS获取鼠标XY轴的值](#原生js获取鼠标xy轴的值)
   - [JS实现添加事件兼容函数](#js实现添加事件兼容函数)
   - [JS获取某元素以浏览器左上角为原点的坐标(有问题)](#js获取某元素以浏览器左上角为原点的坐标有问题)
@@ -250,19 +250,20 @@ function SetHome(url) {
 }
 ```
 
-## JS 生成范围随机整数（ 应拓展第三个参数灵活生成整数或者小数）
+## JS 生成范围随机整数
 
 ``` bash
-// JS 生成范围随机整数（ 应拓展第三个参数灵活生成整数或者小数）
+// JS 生成范围随机整数
 /**
  * 生成从minNum到maxNum的随机整数
- * 
- * @param {Number} minNum 
- * @param {Number} maxNum 
+ * @param {number} minNum 
+ * @param {number} maxNum 
+ * @param {boolean} [status=true] 生成整数 false生成小数
  * @returns 
  */
-function randomNum(minNum, maxNum) {
+function randomNum(minNum, maxNum, status = true) {
   let result;
+  console.log(arguments.length);
   switch (arguments.length) {
     case 1:
       result = parseInt(Math.random() * minNum + 1, 10);
@@ -270,6 +271,14 @@ function randomNum(minNum, maxNum) {
     case 2:
       result = parseInt(Math.random() * (maxNum - minNum + 1) + minNum, 10);
       break
+    case 3:
+      if (status) {
+        result = parseInt(Math.random() * (maxNum - minNum + 1) + minNum, 10);
+        break
+      } else {
+        result = Math.random() * (maxNum - minNum + 1) + minNum;
+        break
+      }
     default:
       result = 0;
       break
