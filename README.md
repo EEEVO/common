@@ -1,4 +1,4 @@
-# 常用js代码
+# 平时累积常用代码,供自己方便
 
 <!-- TOC -->
 
@@ -312,7 +312,7 @@ function insertionSort(arr) {
 }
 ```
 
-## Js身份证验证函数
+### Js身份证验证函数
 
 ``` bash
 //            二代身份证号码为 18 位，其最后一位(第 18 位)的计算方法为:
@@ -980,7 +980,7 @@ function ClearHeadJs(src) {
 };
 ```
 
-## 整个UL 点击事件 加在UL里的onclick里
+## 整个URL 点击事件 加在UL里的onclick里
 
 ``` bash
 function CreateFrom(url, params) {
