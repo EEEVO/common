@@ -3,49 +3,276 @@
 <!-- TOC -->
 
 - [常用js代码](#常用js代码)
-  - [递归遍历数组成员并输出](#递归遍历数组成员并输出)
-  - [JS插入排序](#js插入排序)
+  - [BOM](#bom)
+    - [判断浏览器](#判断浏览器)
+    - [手机类型判断](#手机类型判断)
+    - [获取当前js的版本](#获取当前js的版本)
+    - [判断浏览器是否支持CSS3属性](#判断浏览器是否支持css3属性)
+    - [阻止事件冒泡](#阻止事件冒泡)
+    - [加入收藏](#加入收藏)
+    - [实现设为首页](#实现设为首页)
+    - [JS 弹出新窗口全屏](#js-弹出新窗口全屏)
+  - [Array](#array)
+    - [js删除数组指定item](#js删除数组指定item)
+    - [js删除指定index的item](#js删除指定index的item)
+    - [递归遍历数组成员并输出](#递归遍历数组成员并输出)
+    - [JS插入排序](#js插入排序)
   - [Js身份证验证函数](#js身份证验证函数)
-  - [阻止事件冒泡](#阻止事件冒泡)
-  - [求一个字符串长度](#求一个字符串长度)
-  - [js实现对象的深Clone](#js实现对象的深clone)
-  - [js实现解析URL参数， 返回一个对象](#js实现解析url参数-返回一个对象)
-  - [加入收藏](#加入收藏)
-  - [实现设为首页](#实现设为首页)
-  - [JS 生成范围随机整数](#js-生成范围随机整数)
-  - [原生JS获取鼠标XY轴的值](#原生js获取鼠标xy轴的值)
-  - [JS实现添加事件兼容函数](#js实现添加事件兼容函数)
-  - [JS获取某元素以浏览器左上角为原点的坐标(有问题)](#js获取某元素以浏览器左上角为原点的坐标有问题)
-  - [JS获取鼠标X.Y轴坐标](#js获取鼠标xy轴坐标)
-  - [手机类型判断](#手机类型判断)
-  - [获取当前js的版本](#获取当前js的版本)
-  - [字符串截取方法](#字符串截取方法)
-  - [JS 弹出新窗口全屏](#js-弹出新窗口全屏)
-  - [全选 / 全不选](#全选--全不选)
-  - [判断浏览器](#判断浏览器)
-  - [JS判断两个日期大小 适合 2012 - 09 - 09 与2012 - 9 - 9 两种格式的对比](#js判断两个日期大小-适合-2012---09---09-与2012---9---9-两种格式的对比)
-  - [移除事件](#移除事件)
-  - [回车提交](#回车提交)
-  - [JS 执行计时器](#js-执行计时器)
+  - [String](#string)
+    - [JS 替换非法字符主要用在密码验证上出现的特殊字符](#js-替换非法字符主要用在密码验证上出现的特殊字符)
+    - [Js 去掉空格方法](#js-去掉空格方法)
+    - [字符串截取方法](#字符串截取方法)
+    - [求一个字符串长度](#求一个字符串长度)
+    - [js实现解析URL参数， 返回一个对象](#js实现解析url参数-返回一个对象)
+  - [Object](#object)
+    - [js实现对象的深Clone](#js实现对象的深clone)
+  - [Math](#math)
+    - [JS 生成范围随机整数](#js-生成范围随机整数)
+  - [DOM](#dom)
+    - [移除事件](#移除事件)
+    - [回车提交JQ](#回车提交jq)
+    - [js实时计算rem,宽度大于1920px时1rem=100px](#js实时计算rem宽度大于1920px时1rem100px)
+    - [绑定按钮回车触发单机事件](#绑定按钮回车触发单机事件)
+    - [按Ctrl + Entert 直接提交表单](#按ctrl--entert-直接提交表单)
+    - [全选 / 全不选](#全选--全不选)
+    - [原生JS获取鼠标XY轴的值](#原生js获取鼠标xy轴的值)
+    - [JS实现添加事件兼容函数](#js实现添加事件兼容函数)
+    - [JS获取某元素以浏览器左上角为原点的坐标(有问题)](#js获取某元素以浏览器左上角为原点的坐标有问题)
+    - [JS获取鼠标X.Y轴坐标](#js获取鼠标xy轴坐标)
+  - [Date](#date)
+    - [JS判断两个日期大小 适合 2012 - 09 - 09 与2012 - 9 - 9 两种格式的对比](#js判断两个日期大小-适合-2012---09---09-与2012---9---9-两种格式的对比)
+    - [获取当前时间](#获取当前时间)
+    - [JS 执行计时器](#js-执行计时器)
   - [JS写入Cookie](#js写入cookie)
   - [JS 读Cookie](#js-读cookie)
   - [Ajax 请求](#ajax-请求)
   - [JS StringBuilder](#js-stringbuilder)
   - [JS 加载到顶部LoadJS](#js-加载到顶部loadjs)
   - [清空 LoadJS 加载到顶部的js引用](#清空-loadjs-加载到顶部的js引用)
-  - [JS 替换非法字符主要用在密码验证上出现的特殊字符](#js-替换非法字符主要用在密码验证上出现的特殊字符)
-  - [按Ctrl + Entert 直接提交表单](#按ctrl--entert-直接提交表单)
-  - [获取当前时间](#获取当前时间)
-  - [Js 去掉空格方法](#js-去掉空格方法)
   - [js 动态移除 head 里的 js 引用](#js-动态移除-head-里的-js-引用)
   - [整个UL 点击事件 加在UL里的onclick里](#整个ul-点击事件-加在ul里的onclick里)
-  - [js删除数组指定item](#js删除数组指定item)
-  - [js删除指定index的item](#js删除指定index的item)
-  - [js实时计算rem,宽度大于1920px时1rem=100px](#js实时计算rem宽度大于1920px时1rem100px)
 
 <!-- /TOC -->
 
-## 递归遍历数组成员并输出
+## BOM
+
+### 判断浏览器
+
+```bash
+function getOs() {
+  if (navigator.userAgent.indexOf("MSIE 8.0") > 0) {
+    return "MSIE8";
+  } else if (navigator.userAgent.indexOf("MSIE 6.0") > 0) {
+    return "MSIE6";
+  } else if (navigator.userAgent.indexOf("MSIE 7.0") > 0) {
+    return "MSIE7";
+  } else if (isFirefox = navigator.userAgent.indexOf("Firefox") > 0) {
+    return "Firefox";
+  }
+  if (navigator.userAgent.indexOf("Chrome") > 0) {
+    return "Chrome";
+  } else {
+    return "Other";
+  }
+}
+```
+
+### 手机类型判断
+
+```bash
+var BrowserInfo = {
+  userAgent: navigator.userAgent.toLowerCase(),
+  isAndroid: Boolean(navigator.userAgent.match(/android/ig)),
+  isIphone: Boolean(navigator.userAgent.match(/iphone|ipod/ig)),
+  isIpad: Boolean(navigator.userAgent.match(/ipad/ig)),
+  isWeixin: Boolean(navigator.userAgent.match(/MicroMessenger/ig)),
+}
+```
+
+### 获取当前js的版本
+
+``` bash
+function getjsversion() {
+  var n = navigator;
+  var u = n.userAgent;
+  var apn = n.appName;
+  var v = n.appVersion;
+  var ie = v.indexOf('MSIE ');
+  if (ie > 0) {
+    apv = parseInt(i = v.substring(ie + 5));
+    if (apv > 3) {
+      apv = parseFloat(i);
+    }
+  } else {
+    apv = parseFloat(v);
+  }
+  var isie = (apn == 'Microsoft Internet Explorer');
+  var ismac = (u.indexOf('Mac') >= 0);
+  var javascriptVersion = "1.0";
+  if (String && String.prototype) {
+    javascriptVersion = '1.1';
+    if (javascriptVersion.match) {
+      javascriptVersion = '1.2';
+      var tm = new Date;
+      if (tm.setUTCDate) {
+        javascriptVersion = '1.3';
+        if (isie && ismac && apv >= 5) javascriptVersion = '1.4';
+        var pn = 0;
+        if (pn.toPrecision) {
+          javascriptVersion = '1.5';
+          a = new Array;
+          if (a.forEach) {
+            javascriptVersion = '1.6';
+            i = 0;
+            o = new Object;
+            tcf = new Function('o', 'var e,i=0;try{i=new Iterator(o)}catch(e){}return i');
+            i = tcf(o);
+            if (i && i.next) {
+              javascriptVersion = '1.7';
+            }
+          }
+        }
+      }
+    }
+  }
+  return javascriptVersion;
+}
+```
+
+### 判断浏览器是否支持CSS3属性
+
+``` bash
+/**
+ * 判断是否支持css3
+ * 
+ * @param {string} style CSS属性
+ * @returns 
+ */
+function supportCss3(style) {
+    var prefix = ['webkit', 'Moz', 'ms', 'o'],
+        i,
+        humpString = [],
+        htmlStyle = document.documentElement.style,
+        _toHumb = function (string) {
+            return string.replace(/-(\w)/g, function ($0, $1) {
+                return $1.toUpperCase();
+            });
+        };
+
+    for (i in prefix)
+        humpString.push(_toHumb(prefix[i] + '-' + style));
+
+    humpString.push(_toHumb(style));
+
+    for (i in humpString)
+        if (humpString[i] in htmlStyle) return true;
+
+    return false;
+}
+```
+
+### 阻止事件冒泡
+
+``` bash
+//@e ：事件对象
+function stopPP(e) {
+  var evt = e || window.event;
+  //IE用cancelBubble=true来阻止而FF下需要用stopPropagation方法
+  evt.stopPropagation ? evt.stopPropagation() : (evt.cancelBubble = true);
+}
+```
+
+### 加入收藏
+
+``` bash
+/**
+ * 加入收藏
+ * 
+ * @param {String} sURL 
+ * @param {any} sTitle 
+ */
+function AddFavorite(sURL, sTitle) {
+  sURL = encodeURI(sURL);
+  try {
+    window.external.addFavorite(sURL, sTitle);
+  } catch (e) {
+    try {
+      window.sidebar.addPanel(sTitle, sURL, "");
+    } catch (e) {
+      alert("加入收藏失败");
+    }
+  }
+}
+```
+
+### 实现设为首页
+
+``` bash
+/**
+ * 实现设为首页
+ * 
+ * @param {String} url 
+ */
+function SetHome(url) {
+  if (document.all) {
+    document.body.style.behavior = 'url(#default#homepage)';
+    document.body.setHomePage(url);
+  } else {
+    alert("设为首页失败");
+  }
+}
+```
+
+### JS 弹出新窗口全屏
+
+``` bash
+var tmp = window.open("about:blank", "", "fullscreen=1")
+tmp.moveTo(0, 0);
+tmp.resizeTo(screen.width + 20, screen.height);
+tmp.focus();
+tmp.location.href = 'http://www.che168.com/pinggu/eva_' + msgResult.message[0] + '.html';
+var config_ = "left=0,top=0,width=" + (window.screen.Width) + ",height=" + (window.screen.Height);
+window.open('http://www.che168.com/pinggu/eva_' + msgResult.message[0] + '.html', "winHanle", config_);
+//模拟form提交打开新页面
+var f = document.createElement("form");
+f.setAttribute('action', 'http://www.che168.com/pinggu/eva_' + msgResult.message[0] + '.html');
+f.target = '_blank';
+document.body.appendChild(f);
+f.submit();
+```
+
+## Array
+
+### js删除数组指定item
+
+``` bash
+Array.prototype.removeByValue = function (val) {
+  for (var i = 0; i < this.length; i++) {
+    if (this[i] == val) {
+      this.splice(i, 1);
+      break;
+    }
+  }
+}
+```
+
+### js删除指定index的item
+
+``` bash
+Array.prototype.remove = function (dx) {
+  if (isNaN(dx) || dx > this.length) {
+    return false;
+  }
+  for (var i = 0, n = 0; i < this.length; i++) {
+    if (this[i] != this[dx]) {
+      this[n++] = this[i]
+    }
+  }
+  this.length -= 1
+}
+```
+
+### 递归遍历数组成员并输出
 
 ``` bash
 
@@ -62,7 +289,7 @@ function printArray(arr) {
 }
 ```
 
-## JS插入排序
+### JS插入排序
 
 ``` bash
 //此方法排序从小到大
@@ -119,19 +346,56 @@ function Authentication() {
 }
 ```
 
-## 阻止事件冒泡
+## String
+
+### JS 替换非法字符主要用在密码验证上出现的特殊字符
 
 ``` bash
-//@e ：事件对象
-function stopPP(e) {
-  var evt = e || window.event;
-  //IE用cancelBubble=true来阻止而FF下需要用stopPropagation方法
-  evt.stopPropagation ? evt.stopPropagation() : (evt.cancelBubble = true);
+function URLencode(sStr) {
+  return escape(sStr).replace(/\+/g, '%2B').replace(/\"/g, '%22').replace(/\'/g, '%27').replace(/\//g, '%2F');
+};
+```
+
+### Js 去掉空格方法
+
+``` bash
+String.prototype.Trim = function () {
+  return this.replace(/(^\s*)|(\s*$)/g, "");
+}
+String.prototype.LTrim = function () {
+  return this.replace(/(^\s*)/g, "");
+}
+String.prototype.RTrim = function () {
+  return this.replace(/(\s*$)/g, "");
 }
 ```
 
+### 字符串截取方法
 
-## 求一个字符串长度
+``` bash
+function getCharactersLen(charStr, cutCount) {
+  if (charStr == null || charStr == '') return '';
+  var totalCount = 0;
+  var newStr = '';
+  for (var i = 0; i < charStr.length; i++) {
+    var c = charStr.charCodeAt(i);
+    if (c < 255 && c > 0) {
+      totalCount++;
+    } else {
+      totalCount += 2;
+    }
+    if (totalCount >= cutCount) {
+      newStr += charStr.charAt(i);
+      break;
+    } else {
+      newStr += charStr.charAt(i);
+    }
+  }
+  return newStr;
+}
+```
+
+### 求一个字符串长度
 
 ``` bash
 //@  str：传入一个字符串返回该字符串的长度
@@ -151,33 +415,7 @@ function getBytes(str) {
 }
 ```
 
-## js实现对象的深Clone
-
-``` bash
-//PS:深度克隆：所有元素或属性均完全复制，与原对象完全脱离，也就是说所有对于新对象的修改都不会反映到原对象中。
-function cloneObject(o) {
-  //首先对传入的对象进行类型判断，
-  if (!o || "object" !== typeof o) {
-    return o;
-  }
-  var c = "function" === typeof o.pop ? [] : {};
-  var p, v;
-  for (p in o) {
-    if (o.hasOwnProperty(p)) {
-      v = o[p];
-      if (v && 'object' === typeof v) {
-        c[p] = Ext.ux.clone(v);
-      } else {
-        c[p] = v;
-      }
-    }
-  }
-  return c;
-};
-```
-
-
-## js实现解析URL参数， 返回一个对象
+### js实现解析URL参数， 返回一个对象
 
 ``` bash
 /**
@@ -208,49 +446,39 @@ function GetQueryStringRegExp(name, url) {
 }
 ```
 
+## Object
 
-## 加入收藏
+### js实现对象的深Clone
 
 ``` bash
-/**
- * 加入收藏
- * 
- * @param {String} sURL 
- * @param {any} sTitle 
- */
-function AddFavorite(sURL, sTitle) {
-  sURL = encodeURI(sURL);
-  try {
-    window.external.addFavorite(sURL, sTitle);
-  } catch (e) {
-    try {
-      window.sidebar.addPanel(sTitle, sURL, "");
-    } catch (e) {
-      alert("加入收藏失败");
+//PS:深度克隆：所有元素或属性均完全复制，与原对象完全脱离，也就是说所有对于新对象的修改都不会反映到原对象中。
+function cloneObject(o) {
+  //首先对传入的对象进行类型判断，
+  if (!o || "object" !== typeof o) {
+    return o;
+  }
+  var c = "function" === typeof o.pop ? [] : {};
+  var p, v;
+  for (p in o) {
+    if (o.hasOwnProperty(p)) {
+      v = o[p];
+      if (v && 'object' === typeof v) {
+        c[p] = Ext.ux.clone(v);
+      } else {
+        c[p] = v;
+      }
     }
   }
-}
+  return c;
+};
 ```
 
-## 实现设为首页
 
-``` bash
-/**
- * 实现设为首页
- * 
- * @param {String} url 
- */
-function SetHome(url) {
-  if (document.all) {
-    document.body.style.behavior = 'url(#default#homepage)';
-    document.body.setHomePage(url);
-  } else {
-    alert("设为首页失败");
-  }
-}
-```
 
-## JS 生成范围随机整数
+
+## Math
+
+### JS 生成范围随机整数
 
 ``` bash
 // JS 生成范围随机整数
@@ -287,8 +515,87 @@ function randomNum(minNum, maxNum, status = true) {
 }
 ```
 
+## DOM
 
-## 原生JS获取鼠标XY轴的值
+### 移除事件
+
+``` bash
+this.moveBind = function (objId, eventType, callBack) {
+  var obj = document.getElementById(objId);
+  if (obj.removeEventListener) {
+    obj.removeEventListener(eventType, callBack, false);
+  } else if (window.detachEvent) {
+    obj.detachEvent('on' + eventType, callBack);
+  } else {
+    obj['on' + eventType] = null;
+  }
+}
+```
+
+### 回车提交JQ
+
+### js实时计算rem,宽度大于1920px时1rem=100px
+
+``` bash
+(function (doc, win) {
+  var docEl = doc.documentElement,
+    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+    recalc = function () {
+      var clientWidth = docEl.clientWidth;
+      if (!clientWidth) return;
+      if (clientWidth >= 1920) {
+        docEl.style.fontSize = '100px';
+      } else {
+        docEl.style.fontSize = 100 * (clientWidth / 1920) + 'px';
+      }
+    };
+
+  if (!doc.addEventListener) return;
+  win.addEventListener(resizeEvt, recalc, false);
+  doc.addEventListener('DOMContentLoaded', recalc, false);
+})(document, window);
+```
+
+### 绑定按钮回车触发单机事件
+
+``` bash
+$("id").onkeypress = function (event) {
+  event = (event) ? event : ((window.event) ? window.event : "")
+  keyCode = event.keyCode ? event.keyCode : (event.which ? event.which : event.charCode);
+  if (keyCode == 13) {
+    $("SubmitLogin").onclick();
+  }
+}
+```
+
+### 按Ctrl + Entert 直接提交表单
+
+``` bash
+document.body.onkeydown = function (evt) {
+  evt = evt ? evt : (window.event ? window.event : null);
+  if (13 == evt.keyCode && evt.ctrlKey) {
+    evt.returnValue = false;
+    evt.cancel = true;
+    PostData();
+  }
+};
+```
+
+### 全选 / 全不选
+
+```bash
+function selectAll(objSelect) {
+  if (objSelect.checked == true) {
+    $("input[name='chkId']").attr("checked", true);
+    $("input[name='chkAll']").attr("checked", true);
+  } else if (objSelect.checked == false) {
+    $("input[name='chkId']").attr("checked", false);
+    $("input[name='chkAll']").attr("checked", false);
+  }
+}
+```
+
+### 原生JS获取鼠标XY轴的值
 
 ``` bash
 /**
@@ -351,7 +658,7 @@ evt.clientX + document.body.scrollLeft - document.body.clientLeft //在IE中获�
 ```
 
 
-## JS实现添加事件兼容函数
+### JS实现添加事件兼容函数
 
 ``` bash
 /**
@@ -373,7 +680,7 @@ function addEvent(evnentObj, eventType, fn, useCapture) {
 }
 ```
 
-##JS获取某元素以浏览器左上角为原点的坐标(有问题) 
+### JS获取某元素以浏览器左上角为原点的坐标(有问题) 
 
 ``` bash
 /**
@@ -398,7 +705,7 @@ function getPoint(obj) {
 }
 ```
 
-## JS获取鼠标X.Y轴坐标
+### JS获取鼠标X.Y轴坐标
 
 ``` bash
 function mousePosition(evt) {
@@ -418,147 +725,9 @@ function mousePosition(evt) {
 }
 ```
 
-## 手机类型判断
+## Date
 
-```bash
-var BrowserInfo = {
-  userAgent: navigator.userAgent.toLowerCase(),
-  isAndroid: Boolean(navigator.userAgent.match(/android/ig)),
-  isIphone: Boolean(navigator.userAgent.match(/iphone|ipod/ig)),
-  isIpad: Boolean(navigator.userAgent.match(/ipad/ig)),
-  isWeixin: Boolean(navigator.userAgent.match(/MicroMessenger/ig)),
-}
-```
-
-## 获取当前js的版本
-
-``` bash
-function getjsversion() {
-  var n = navigator;
-  var u = n.userAgent;
-  var apn = n.appName;
-  var v = n.appVersion;
-  var ie = v.indexOf('MSIE ');
-  if (ie > 0) {
-    apv = parseInt(i = v.substring(ie + 5));
-    if (apv > 3) {
-      apv = parseFloat(i);
-    }
-  } else {
-    apv = parseFloat(v);
-  }
-  var isie = (apn == 'Microsoft Internet Explorer');
-  var ismac = (u.indexOf('Mac') >= 0);
-  var javascriptVersion = "1.0";
-  if (String && String.prototype) {
-    javascriptVersion = '1.1';
-    if (javascriptVersion.match) {
-      javascriptVersion = '1.2';
-      var tm = new Date;
-      if (tm.setUTCDate) {
-        javascriptVersion = '1.3';
-        if (isie && ismac && apv >= 5) javascriptVersion = '1.4';
-        var pn = 0;
-        if (pn.toPrecision) {
-          javascriptVersion = '1.5';
-          a = new Array;
-          if (a.forEach) {
-            javascriptVersion = '1.6';
-            i = 0;
-            o = new Object;
-            tcf = new Function('o', 'var e,i=0;try{i=new Iterator(o)}catch(e){}return i');
-            i = tcf(o);
-            if (i && i.next) {
-              javascriptVersion = '1.7';
-            }
-          }
-        }
-      }
-    }
-  }
-  return javascriptVersion;
-}
-```
-
-## 字符串截取方法
-
-``` bash
-function getCharactersLen(charStr, cutCount) {
-  if (charStr == null || charStr == '') return '';
-  var totalCount = 0;
-  var newStr = '';
-  for (var i = 0; i < charStr.length; i++) {
-    var c = charStr.charCodeAt(i);
-    if (c < 255 && c > 0) {
-      totalCount++;
-    } else {
-      totalCount += 2;
-    }
-    if (totalCount >= cutCount) {
-      newStr += charStr.charAt(i);
-      break;
-    } else {
-      newStr += charStr.charAt(i);
-    }
-  }
-  return newStr;
-}
-```
-
-## JS 弹出新窗口全屏
-
-``` bash
-var tmp = window.open("about:blank", "", "fullscreen=1")
-tmp.moveTo(0, 0);
-tmp.resizeTo(screen.width + 20, screen.height);
-tmp.focus();
-tmp.location.href = 'http://www.che168.com/pinggu/eva_' + msgResult.message[0] + '.html';
-var config_ = "left=0,top=0,width=" + (window.screen.Width) + ",height=" + (window.screen.Height);
-window.open('http://www.che168.com/pinggu/eva_' + msgResult.message[0] + '.html', "winHanle", config_);
-//模拟form提交打开新页面
-var f = document.createElement("form");
-f.setAttribute('action', 'http://www.che168.com/pinggu/eva_' + msgResult.message[0] + '.html');
-f.target = '_blank';
-document.body.appendChild(f);
-f.submit();
-```
-
-## 全选 / 全不选
-
-```bash
-function selectAll(objSelect) {
-  if (objSelect.checked == true) {
-    $("input[name='chkId']").attr("checked", true);
-    $("input[name='chkAll']").attr("checked", true);
-  } else if (objSelect.checked == false) {
-    $("input[name='chkId']").attr("checked", false);
-    $("input[name='chkAll']").attr("checked", false);
-  }
-}
-```
-
-## 判断浏览器
-
-```bash
-function getOs() {
-  if (navigator.userAgent.indexOf("MSIE 8.0") > 0) {
-    return "MSIE8";
-  } else if (navigator.userAgent.indexOf("MSIE 6.0") > 0) {
-    return "MSIE6";
-  } else if (navigator.userAgent.indexOf("MSIE 7.0") > 0) {
-    return "MSIE7";
-  } else if (isFirefox = navigator.userAgent.indexOf("Firefox") > 0) {
-    return "Firefox";
-  }
-  if (navigator.userAgent.indexOf("Chrome") > 0) {
-    return "Chrome";
-  } else {
-    return "Other";
-  }
-}
-```
-
-## JS判断两个日期大小 适合 2012 - 09 - 09 与2012 - 9 - 9 两种格式的对比
+### JS判断两个日期大小 适合 2012 - 09 - 09 与2012 - 9 - 9 两种格式的对比
 
 ``` bash
 //得到日期值并转化成日期格式，replace(/\-/g, "\/")是根据验证表达式把日期转化成长日期格式，这样再进行判断就好判断了
@@ -576,34 +745,28 @@ function ValidateDate() {
 }
 ```
 
-## 移除事件
+### 获取当前时间
 
 ``` bash
-this.moveBind = function (objId, eventType, callBack) {
-  var obj = document.getElementById(objId);
-  if (obj.removeEventListener) {
-    obj.removeEventListener(eventType, callBack, false);
-  } else if (window.detachEvent) {
-    obj.detachEvent('on' + eventType, callBack);
-  } else {
-    obj['on' + eventType] = null;
-  }
+function GetCurrentDate() {
+  var d = new Date();
+  var y = d.getYear() + 1900;
+  month = add_zero(d.getMonth() + 1),
+    days = add_zero(d.getDate()),
+    hours = add_zero(d.getHours());
+  minutes = add_zero(d.getMinutes()),
+    seconds = add_zero(d.getSeconds());
+  var str = y + '-' + month + '-' + days + ' ' + hours + ':' + minutes + ':' + seconds;
+  return str;
+};
+
+function add_zero(temp) {
+  if (temp < 10) return "0" + temp;
+  else return temp;
 }
 ```
 
-## 回车提交
-
-``` bash
-$("id").onkeypress = function (event) {
-  event = (event) ? event : ((window.event) ? window.event : "")
-  keyCode = event.keyCode ? event.keyCode : (event.which ? event.which : event.charCode);
-  if (keyCode == 13) {
-    $("SubmitLogin").onclick();
-  }
-}
-```
-
-## JS 执行计时器
+### JS 执行计时器
 
 ``` bash
 timeStart = new Date().getTime();
@@ -802,62 +965,6 @@ function ClearHeadJs(src) {
 };
 ```
 
-## JS 替换非法字符主要用在密码验证上出现的特殊字符 
-
-``` bash
-function URLencode(sStr) {
-  return escape(sStr).replace(/\+/g, '%2B').replace(/\"/g, '%22').replace(/\'/g, '%27').replace(/\//g, '%2F');
-};
-```
-
-## 按Ctrl + Entert 直接提交表单 
-
-``` bash
-document.body.onkeydown = function (evt) {
-  evt = evt ? evt : (window.event ? window.event : null);
-  if (13 == evt.keyCode && evt.ctrlKey) {
-    evt.returnValue = false;
-    evt.cancel = true;
-    PostData();
-  }
-};
-```
-
-## 获取当前时间
-
-``` bash
-function GetCurrentDate() {
-  var d = new Date();
-  var y = d.getYear() + 1900;
-  month = add_zero(d.getMonth() + 1),
-    days = add_zero(d.getDate()),
-    hours = add_zero(d.getHours());
-  minutes = add_zero(d.getMinutes()),
-    seconds = add_zero(d.getSeconds());
-  var str = y + '-' + month + '-' + days + ' ' + hours + ':' + minutes + ':' + seconds;
-  return str;
-};
-
-function add_zero(temp) {
-  if (temp < 10) return "0" + temp;
-  else return temp;
-}
-```
-
-## Js 去掉空格方法
-
-``` bash
-String.prototype.Trim = function () {
-  return this.replace(/(^\s*)|(\s*$)/g, "");
-}
-String.prototype.LTrim = function () {
-  return this.replace(/(^\s*)/g, "");
-}
-String.prototype.RTrim = function () {
-  return this.replace(/(\s*$)/g, "");
-}
-```
-
 ## js 动态移除 head 里的 js 引用
 
 ``` bash
@@ -890,55 +997,4 @@ function CreateFrom(url, params) {
   document.body.appendChild(f);
   f.submit();
 };
-```
-
-## js删除数组指定item
-
-``` bash
-Array.prototype.removeByValue = function (val) {
-  for (var i = 0; i < this.length; i++) {
-    if (this[i] == val) {
-      this.splice(i, 1);
-      break;
-    }
-  }
-}
-```
-
-## js删除指定index的item
-
-``` bash
-Array.prototype.remove = function (dx) {
-  if (isNaN(dx) || dx > this.length) {
-    return false;
-  }
-  for (var i = 0, n = 0; i < this.length; i++) {
-    if (this[i] != this[dx]) {
-      this[n++] = this[i]
-    }
-  }
-  this.length -= 1
-}
-```
-
-## js实时计算rem,宽度大于1920px时1rem=100px
-
-``` bash
-(function (doc, win) {
-  var docEl = doc.documentElement,
-    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
-    recalc = function () {
-      var clientWidth = docEl.clientWidth;
-      if (!clientWidth) return;
-      if (clientWidth >= 1920) {
-        docEl.style.fontSize = '100px';
-      } else {
-        docEl.style.fontSize = 100 * (clientWidth / 1920) + 'px';
-      }
-    };
-
-  if (!doc.addEventListener) return;
-  win.addEventListener(resizeEvt, recalc, false);
-  doc.addEventListener('DOMContentLoaded', recalc, false);
-})(document, window);
 ```
