@@ -532,6 +532,40 @@ this.moveBind = function (objId, eventType, callBack) {
 }
 ```
 
+### 增加事件
+
+``` bash
+var EventUtil = {
+    addHandler:function(element,type,handler){
+        if(element.addEventListener){//检测是否存在DOM2
+            element.addEventListener(type,handler,false)
+        }else if(element.attachEvent){//存在ie
+            element.attachEvent('on'+type,handler)
+        }else{//DOM0
+            element['on'+type]=handelr;
+        }
+    },
+    removeHandler:function(element,type,handler){
+        if(element.removeEventListener){
+            element.removeEventListener(type,handler,false);
+        }else if(element.detachEvent){
+            element.detachEvent('on'+type,handler);
+        }else{
+            element['on'+type]=null;
+        }
+    }
+}
+
+//使用
+var btn = document.getElementById('myBtn');
+var handler = function(){
+    console.log('hi')
+}
+EventUtil.addHandler(btn,'click',handler);
+
+EventUtil.removeHandler(btn,'click',handler);
+```
+
 ### 回车提交JQ
 
 ### js实时计算rem,宽度大于1920px时1rem=100px
