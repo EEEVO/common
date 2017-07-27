@@ -54,6 +54,24 @@
 
 <!-- /TOC -->
 
+## XML
+
+// 转成xml对象
+  createXml(str) {
+    if (document.all) {
+      var xmlDom = new ActiveXObject("Microsoft.XMLDOM")
+      xmlDom.loadXML(str)
+      return xmlDom
+    }
+    else
+      return new DOMParser().parseFromString(str, "text/xml")
+  },
+// 处理xml串
+getXmlStr(str) {
+    return this.createXml(str).getElementsByTagName("string")[0].innerHTML
+},
+
+
 ## BOM
 
 ### 判断浏览器
