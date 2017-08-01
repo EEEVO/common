@@ -818,6 +818,38 @@ function add_zero(temp) {
 }
 ```
 
+### 获取前num天的日期
+
+```
+/**
+ * 公有方法：获取前num天的日期
+ * 
+ * @param {Number} num 自动向上取整 
+ * @param {boolean} order true是日期从大到小，false是从小到大 
+ * @returns MM-dd
+ */
+function getTodayDate(num, order = false) {
+  debugger
+  num = Math.ceil(num)
+  let arr_Date = []
+  for (var i = 0; i < num; i++) {
+    let date = new Date(new Date().getTime() - (i * 24 * 60 * 60 * 1000))
+    let currMonth = new Date(date).getMonth() + 1
+    let currDay = new Date(date).getDate()
+    let result = `${currMonth.toString().length < 2 ? `0${currMonth}` : currMonth}-${currDay.toString().length < 2 ? `0${currDay}` : currDay}`;
+    if (order) {
+      arr_Date.push(result);
+    } else {
+      arr_Date.unshift(result);
+    }
+  }
+  // console.log(arr_Date);
+  return arr_Date;
+}
+console.log(getTodayDate(7));
+
+```
+
 ### JS 执行计时器
 
 ``` bash
